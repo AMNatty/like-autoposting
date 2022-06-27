@@ -26,6 +26,8 @@ COPY --from=build /etc/group /etc/group
 
 WORKDIR /likeposter
 
+RUN chown -R likeposter:likeposter .
+
 COPY --from=build /likeposter/target/release/likeposting ./
 
 USER likeposter:likeposter
